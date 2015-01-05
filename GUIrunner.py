@@ -8,12 +8,12 @@ import subprocess
 GIT_BRANCH = "development"
 CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
 # Static configuration
-GIT_REPOSITORY_CSV = ["git://git.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-synchrotroncsv.git", "git://git.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-bl05idcsv.git", "git://git.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-peemcsv.git"]
+GIT_REPOSITORY_CSV = ["git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-synchrotroncsv.git", "git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-bl05idcsv.git", "git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-peemcsv.git"]
 DEFAULT_CSV_FOLDER = [CURRENT_PATH + "/Synchrotron_CSV", CURRENT_PATH + "/UarpesBL_CSV", CURRENT_PATH + "/PeemBL_CSV"]
-GIT_REPOSITORY_GUI = ["git://git.cps.uj.edu.pl/controlroomsoftware/app-cosylab-synchrotronguis.git", "git://git.cps.uj.edu.pl/controlroomsoftware/app-cosylab-bl05idguis.git", "git://git.cps.uj.edu.pl/controlroomsoftware/app-cosylab-peemguis.git"]
+GIT_REPOSITORY_GUI = ["git://git.m.cps.uj.edu.pl/controlroomsoftware/app-cosylab-synchrotronguis.git", "git://git.m.cps.uj.edu.pl/controlroomsoftware/app-cosylab-bl05idguis.git", "git://git.m.cps.uj.edu.pl/controlroomsoftware/app-cosylab-peemguis.git"]
 DEFAULT_GUI_FOLDER = [CURRENT_PATH + "/Synchrotron_GUIs", CURRENT_PATH + "/UarpesBL_GUIs", CURRENT_PATH + "/PeemBL_GUIs"]
 
-GIT_REPOSITORY_VIEW = "git://git.cps.uj.edu.pl/controlroomsoftware/app-cosylab-controlprogram.git"
+GIT_REPOSITORY_VIEW = "git://git.m.cps.uj.edu.pl/controlroomsoftware/app-cosylab-controlprogram.git"
 DEFAULT_VIEW_FOLDER = CURRENT_PATH + "/ControlProgram"
 OVERVIEW_GUI_NAME = "ControlProgram.py"
 
