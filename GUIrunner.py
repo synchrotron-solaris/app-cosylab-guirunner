@@ -5,7 +5,7 @@ import os
 import argparse
 import subprocess
 
-GIT_BRANCH = "development"
+GIT_BRANCH = "production"
 CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
 # Static configuration
 GIT_REPOSITORY_CSV = ["git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-synchrotroncsv.git", "git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-bl05idcsv.git", "git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-peemcsv.git"]
