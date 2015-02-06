@@ -8,16 +8,16 @@ import subprocess
 GIT_BRANCH = "production"
 CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
 # Static configuration
-GIT_REPOSITORY_CSV = ["git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-synchrotroncsv.git", "git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-bl05idcsv.git", "git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-peemcsv.git"]
+GIT_REPOSITORY_CSV = ["git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-synchrotroncsv.git", "git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-bl05idcsv.git", "git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-bl04bmcsv.git"]
 DEFAULT_CSV_FOLDER = [CURRENT_PATH + "/Synchrotron_CSV", CURRENT_PATH + "/UarpesBL_CSV", CURRENT_PATH + "/PeemBL_CSV"]
-GIT_REPOSITORY_GUI = ["git://git.m.cps.uj.edu.pl/controlroomsoftware/app-cosylab-synchrotronguis.git", "git://git.m.cps.uj.edu.pl/controlroomsoftware/app-cosylab-bl05idguis.git", "git://git.m.cps.uj.edu.pl/controlroomsoftware/app-cosylab-peemguis.git"]
+GIT_REPOSITORY_GUI = ["git://git.m.cps.uj.edu.pl/controlroomsoftware/app-cosylab-synchrotronguis.git", "git://git.m.cps.uj.edu.pl/controlroomsoftware/app-cosylab-bl05idguis.git", "git://git.m.cps.uj.edu.pl/controlroomsoftware/app-cosylab-bl04bmguis.git"]
 DEFAULT_GUI_FOLDER = [CURRENT_PATH + "/Synchrotron_GUIs", CURRENT_PATH + "/UarpesBL_GUIs", CURRENT_PATH + "/PeemBL_GUIs"]
 
 GIT_REPOSITORY_VIEW = "git://git.m.cps.uj.edu.pl/controlroomsoftware/app-cosylab-controlprogram.git"
 DEFAULT_VIEW_FOLDER = CURRENT_PATH + "/ControlProgram"
 OVERVIEW_GUI_NAME = "ControlProgram.py"
 
-CSV_FILE_NAME = ["synchrotron_devices.csv", "BL-05ID.csv", "BL-04ID.csv"]
+CSV_FILE_NAME = ["synchrotron_devices.csv", "BL-05ID.csv", "BL-04BM.csv"]
 VIEW_SELECTION = ["Synchrotron", "Uarpes", "Peem"]
 TITLES = ["\"Solaris Synchrotron Control Program\"", "\"Uarpes Beamline Control Program\"", "\"Peem Beamline Control Program\""]
 
@@ -142,6 +142,8 @@ def check_updates(links, folders):
             # No connection and other problems.
             print "While updating: " + str(links[i]) + " error occurred: " + str(e)
             no_errors += 1
+        except Exception, e:
+            print "General error: " + str(e)
         except:
             print "Unknown error while trying to update: " + str(links[i])
             no_errors += 1
