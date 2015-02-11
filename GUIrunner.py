@@ -34,6 +34,7 @@ def main():
     # Parse the arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('--noCheck', action='store_true', help="Don't check GIT repo for updates.")
+    parser.add_argument('--noStart', action='store_true', help="Don't start the control program, unly check GIT repo for updates.")
     parser.add_argument('--view', action='store', type=str, default=VIEW_SELECTION[0], help="Select system to overview.")
     parser.add_argument('--repoCSV', action='store', type=str, help="Use custom repository link for cvs file.")
     parser.add_argument('--localCSV', action='store', type=str, help="Use custom folder for csv file.")
@@ -82,6 +83,9 @@ def main():
     # Return if error occurred while updating
     if status_code != 0:
         print ERROR_UPDATE
+        return status_code
+
+    if args.noStart:
         return status_code
 
     # Launch the correct overview GUI with 2 paths (path to .csv and path to custom GUI files) and a title parameter
