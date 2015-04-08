@@ -18,6 +18,7 @@ DEFAULT_VIEW_FOLDER = CURRENT_PATH + "/ControlProgram"
 OVERVIEW_GUI_NAME = "ControlProgram.py"
 
 CSV_FILE_NAME = ["synchrotron_devices.csv", "BL-05ID.csv", "BL-04BM.csv"]
+GCSV_FILE_NAME = ["synchrotron_groups.csv", None, None]
 VIEW_SELECTION = ["Synchrotron", "Uarpes", "Peem"]
 TITLES = ["\"Solaris Synchrotron Control Program\"", "\"Uarpes Beamline Control Program\"", "\"Peem Beamline Control Program\""]
 
@@ -91,6 +92,8 @@ def main():
     # Launch the correct overview GUI with 2 paths (path to .csv and path to custom GUI files) and a title parameter
     # Create string to start the process with parameters
     start_string = "python2.7 " + str(args.localCP) + "/" + str(OVERVIEW_GUI_NAME) + " --CSV " + str(args.localCSV) + "/" + str(CSV_FILE_NAME[a]) + " --GUI " + str(args.localGUI)
+    if GCSV_FILE_NAME[a]:
+        start_string += " --GCSV " + str(args.localCSV) + "/" + str(GCSV_FILE_NAME[a])
     start_string += " --TITLE " + TITLES[a]
     start_string += " -v " if args.verbose else ""
 
@@ -104,6 +107,11 @@ def main():
         print "File: " + (str(args.localCSV) + "/" + str(CSV_FILE_NAME[a])) + " does not exist."
         print "Check if the repository location for the CSV files is properly set."
         status_code = 1
+    if GCSV_FILE_NAME[a]:
+        if not os.path.isfile(str(args.localCSV) + "/" + str(GCSV_FILE_NAME[a])):
+            print "File: " + (str(args.localCSV) + "/" + str(GCSV_FILE_NAME[a])) + " does not exist."
+            print "Check if the repository location for the CSV files is properly set."
+            status_code = 1
 
     # Return if files not in place
     if status_code != 0:
