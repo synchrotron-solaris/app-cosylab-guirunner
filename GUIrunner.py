@@ -7,6 +7,7 @@ import subprocess
 
 GIT_BRANCH = "production"
 CURRENT_PATH = os.path.dirname(os.path.abspath(__file__))
+CURRENT_PATH += "/../ControlProgramConf/"
 # Static configuration
 GIT_REPOSITORY_CSV = ["git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-synchrotroncsv.git", "git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-bl05idcsv.git", "git://git.m.cps.uj.edu.pl/facilityconfiguration/conf-cosylab-bl04bmcsv.git"]
 DEFAULT_CSV_FOLDER = [CURRENT_PATH + "/Synchrotron_CSV", CURRENT_PATH + "/UarpesBL_CSV", CURRENT_PATH + "/PeemBL_CSV"]
