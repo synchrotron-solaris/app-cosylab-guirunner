@@ -19,7 +19,7 @@ DEFAULT_VIEW_FOLDER = CURRENT_PATH + "/ControlProgram"
 OVERVIEW_GUI_NAME = "ControlProgram.py"
 
 CSV_FILE_NAME = ["synchrotron_devices.csv", "BL-05ID.csv", "BL-04BM.csv"]
-GCSV_FILE_NAME = ["synchrotron_groups.csv", None, "BL-04BM_groups.csv"]
+GCSV_FILE_NAME = ["synchrotron_groups.csv", "BL-05ID_groups.csv", "BL-04BM_groups.csv"]
 VIEW_SELECTION = ["Synchrotron", "Uarpes", "Peem"]
 TITLES = ["\"Solaris Synchrotron Control Program\"", "\"Uarpes Beamline Control Program\"", "\"Peem Beamline Control Program\""]
 
